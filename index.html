@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stefane Ballad Cerezo, IT student and developer</title>
+<meta name="description" content="Portfolio of Stefane Ballad Cerezo, a BS Information Technology student at the University of La Salette in Santiago City, Isabela, looking for an OJT placement in software development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#recognition">Recognition</a></li>
+        <li><a href="#involvement">Involvement</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <a class="btn small primary" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Resume (PDF)<span class="sr-only"> opens in a new tab</span></a>
+      <button class="btn small" id="theme" type="button">Dark theme</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="name">
+    <div class="wrap">
+      <h1 id="name">Stefane Ballad Cerezo</h1>
+      <p class="lead">I'm a BS Information Technology student at the University of La Salette in Santiago City, Isabela. I build web systems, GIS tools and games, and I'm looking for an on-the-job training placement in software development.</p>
+      <div class="actions">
+        <a class="btn primary" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Open resume (PDF)<span class="sr-only"> opens in a new tab</span></a>
+        <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.docx" download>Download resume (DOCX)</a>
+        <button class="btn" type="button" id="copy-email" data-email="stefanecerezo1127@gmail.com">Copy email address</button>
+      </div>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <p class="note">The resume is a 2-page, plain-text-friendly version that applicant tracking systems can read.</p>
+    </div>
+  </section>
+
+  <section class="block" id="projects" aria-labelledby="h-projects">
+    <div class="wrap">
+      <h2 id="h-projects">Projects</h2>
+      <p class="intro">Four projects, newest first. Select a project to read more, and select it again to close it.</p>
+      <div class="index">
+
+        <details class="proj" open>
+          <summary>
+            <h3>OBE Curriculum Management System</h3>
+            <span class="when">Oct 2026 to present</span>
+            <span class="role">Project Manager and Documentation. Client project for the University of La Salette.</span>
+            <span class="toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="detail">
+            <p>An Outcome-Based Education curriculum system for the university, with 6 user roles and a 7-step approval workflow from Program Head to Dean. It covers CHED CMO and SDG alignment, drag-and-drop planning and attainment tracking.</p>
+            <ul>
+              <li>A local AI assistant drafts learning outcomes, suggests mappings and reads CHED memorandum orders. A person reviews every suggestion and each one is logged, following the university's AI policy.</li>
+              <li>About 90 API endpoints with 69 automated tests, Docker and HTTPS deployment, nightly backups and a one-click Windows setup.</li>
+            </ul>
+            <p class="stack"><strong>Built with</strong> Flutter, FastAPI, PostgreSQL, Ollama, Docker, nginx</p>
+          </div>
+        </details>
+
+        <details class="proj">
+          <summary>
+            <h3>GIS-Based Solar Installation Tracking System</h3>
+            <span class="when">2026</span>
+            <span class="role">Lead Developer. Capstone project, team.</span>
+            <span class="toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="detail">
+            <p>A web app for a solar installation company to map, track and analyze its installation records. I led backend and frontend development and added an AI chatbot.</p>
+            <p class="stack"><strong>Built with</strong> PHP, PostgreSQL/PostGIS, Leaflet.js, Chart.js</p>
+          </div>
+        </details>
+
+        <details class="proj">
+          <summary>
+            <h3>Barangay Health Center Management System</h3>
+            <span class="when">School project</span>
+            <span class="role">Team project for a real client, the Barangay Bantug Health Center in Ramon, Isabela.</span>
+            <span class="toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="detail">
+            <p>Our course asked each team to find a real client and build a solution to its problem. We chose the health center in Barangay Bantug and built a management system for it in VB.NET.</p>
+            <p class="stack"><strong>Built with</strong> VB.NET</p>
+            <p class="links"><a href="https://github.com/stfcrz11/vb.net-BarangayHealthCenterManagementSystem" target="_blank" rel="noopener">View source on GitHub<span class="sr-only"> opens in a new tab</span></a></p>
+          </div>
+        </details>
+
+        <details class="proj">
+          <summary>
+            <h3>Sili-Tubig Clash</h3>
+            <span class="when">Sep 2026</span>
+            <span class="role">Developer Support. Team of five, 2nd Runner Up at CODE &amp; CONQUER Cagayan Valley.</span>
+            <span class="toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="detail">
+            <p>A digital version of the Filipino street game Sili-sili, Maanghang, Tubig-tubig, Malamig. It has cheat-resistant LAN multiplayer: the host checks every action, players join with a 4-digit lobby code, and a dropped player can rejoin a match within 45 seconds.</p>
+            <ul>
+              <li>Builds for Windows, macOS and Android, with every sound effect generated from code.</li>
+            </ul>
+            <p class="stack"><strong>Built with</strong> Godot, GDScript, ENet networking, Python/NumPy</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="certifications" aria-labelledby="h-certs">
+    <div class="wrap">
+      <h2 id="h-certs">Certifications</h2>
+      <p class="intro">Each certificate has a link to the issuer's own verification page.</p>
+      <div class="certs">
+        <article class="cert">
+          <h3>NetOps Certified Engineer (NTO-101)</h3>
+          <p>Issued by AppKademiya, 2026.</p>
+          <a href="https://appkademiya.online/verify/CERT-NETOPS-CERTIFIED-ENGINEER-NTO101-20260902-64F416A28E06" target="_blank" rel="noopener">Verify this certificate<span class="sr-only"> opens in a new tab</span></a>
+        </article>
+        <article class="cert">
+          <h3>Network Support and Security</h3>
+          <p>Cisco Networking Academy. Network troubleshooting and user access control skills.</p>
+          <a href="https://www.netacad.com/certificates/?issuanceId=d34c61c6-ace0-412f-afc3-43d438178b63" target="_blank" rel="noopener">Verify this certificate<span class="sr-only"> opens in a new tab</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="recognition" aria-labelledby="h-rec">
+    <div class="wrap">
+      <h2 id="h-rec">Recognition</h2>
+      <p class="intro">Competitions and awards, newest first.</p>
+      <ol class="rows">
+        <li><time datetime="2026-09">Sep 2026</time><div><span class="what">2nd Runner Up, Team Category</span><span class="where">CODE &amp; CONQUER Cagayan Valley: E-Sports Game Dev Challenge, DOST Region 2</span></div></li>
+        <li><time datetime="2026-06">Jun 2026</time><div><span class="what">Emerging Programmer</span><span class="where">College of Information Technology, University of La Salette (A.Y. 2024–2025)</span></div></li>
+        <li><time datetime="2024-10">Oct 2024</time><div><span class="what">3rd Runner Up, Team Category</span><span class="where">Tagisan ng Talino, University of La Salette</span></div></li>
+        <li><time datetime="2024-10">Oct 2024</time><div><span class="what">Participant, Individual Category</span><span class="where">35th National Statistics Month: IT Quiz Show, Regional Statistics Committee (Region II)</span></div></li>
+        <li><time datetime="2024-03">Mar 2024</time><div><span class="what">Participant, Team Category</span><span class="where">Quiz Adventure, University of La Salette</span></div></li>
+        <li><time datetime="2019-12">Dec 2019</time><div><span class="what">2nd Runner-Up, Paired Category</span><span class="where">Pamphlet-Making Competition, University of La Salette. I designed the layout and graphics in Canva and helped write the content.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="involvement" aria-labelledby="h-inv">
+    <div class="wrap">
+      <h2 id="h-inv">Involvement</h2>
+      <p class="intro">Leadership roles and events, newest first.</p>
+      <ol class="rows">
+        <li><time datetime="2026-05">May 2026</time><div><span class="what">Organizing Team Member</span><span class="where">College of Information Technology Capstone Colloquium, University of La Salette</span></div></li>
+        <li><time datetime="2026-04">Apr 2026</time><div><span class="what">16th ICT Roadshow</span><span class="where">Four sessions: AI in everyday learning, the data science workflow, smart searching with AI, and building workflows with n8n.</span></div></li>
+        <li><time datetime="2026-02">Feb 2026</time><div><span class="what">SDG Fair Symposium</span><span class="where">Student Executive Office, University of La Salette</span></div></li>
+        <li><time datetime="2024-08">A.Y. 2024–2026</time><div><span class="what">Minutes Secretary, CIT Local Council</span><span class="where">Recorded the minutes of officer and general meetings for two school years, and kept the department's organization records.</span></div></li>
+        <li><time datetime="2018-11">Nov 2018</time><div><span class="what">TUKLAS 2018</span><span class="where">Investigatory Project seminar-workshop, University of La Salette High School</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="skills" aria-labelledby="h-skills">
+    <div class="wrap">
+      <h2 id="h-skills" style="margin-bottom:24px">Skills and education</h2>
+      <dl class="facts">
+        <dt>Programming</dt><dd>HTML, CSS, JavaScript, PHP, C++, VB.NET, GDScript</dd>
+        <dt>Frameworks and data</dt><dd>Flutter, FastAPI, PostgreSQL/PostGIS, Leaflet.js, Chart.js, Godot, Docker</dd>
+        <dt>Tools</dt><dd>Git and GitHub, Visual Studio Code, Microsoft Word, Excel and PowerPoint, Canva</dd>
+        <dt>Languages</dt><dd>English (fluent), Filipino (native)</dd>
+        <dt>Interests</dt><dd>Software development, tech entrepreneurship</dd>
+        <dt>Education</dt><dd>BS Information Technology, University of La Salette, 2023 to present. STEM, 2021 to 2023. Junior High School, 2017 to 2021.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <h2 id="h-contact" style="margin-bottom:16px">Contact</h2>
+      <p class="email"><a href="mailto:stefanecerezo1127@gmail.com">stefanecerezo1127@gmail.com</a></p>
+      <p>Mobile: <a href="tel:+639552540848">0955 254 0848</a><br>
+      Santa Rosa, Santiago City, Isabela</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:stefanecerezo1127@gmail.com?subject=OJT%20inquiry">Write an email</a>
+        <a class="btn" href="https://github.com/stfcrz11" target="_blank" rel="noopener">GitHub profile<span class="sr-only"> opens in a new tab</span></a>
+        <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Resume (PDF)<span class="sr-only"> opens in a new tab</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Stefane Ballad Cerezo</span>
+    <a href="#">Back to top</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
