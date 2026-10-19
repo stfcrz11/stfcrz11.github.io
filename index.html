@@ -1,203 +1,247 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stefane Ballad Cerezo, IT student and developer</title>
+<title>Stefane Ballad Cerezo | IT student and developer</title>
 <meta name="description" content="Portfolio of Stefane Ballad Cerezo, a BS Information Technology student at the University of La Salette in Santiago City, Isabela, looking for an OJT placement in software development.">
+<meta name="theme-color" content="#0a0e13">
+<script>document.documentElement.className = "js";</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="bar">
-  <div class="wrap">
-    <nav aria-label="Sections">
+<header class="top">
+  <div class="in">
+    <nav aria-label="Main">
       <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#recognition">Recognition</a></li>
-        <li><a href="#involvement">Involvement</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-view="home">Home</a></li>
+        <li><a href="#about" data-view="about">About</a></li>
+        <li><a href="#resume" data-view="resume">Resume</a></li>
+        <li><a href="#portfolio" data-view="portfolio">Portfolio</a></li>
       </ul>
     </nav>
-    <div class="tools">
-      <a class="btn small primary" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Resume (PDF)<span class="sr-only"> opens in a new tab</span></a>
-      <button class="btn small" id="theme" type="button">Dark theme</button>
-    </div>
+    <a class="phone" href="tel:+639552540848">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+      <span>0955 254 0848</span>
+    </a>
   </div>
 </header>
 
-<main id="main">
-  <section class="hero" aria-labelledby="name">
-    <div class="wrap">
-      <h1 id="name">Stefane Ballad Cerezo</h1>
-      <p class="lead">I'm a BS Information Technology student at the University of La Salette in Santiago City, Isabela. I build web systems and software applications, and I'm looking for an on-the-job training placement in software development.</p>
-      <div class="actions">
-        <a class="btn primary" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Open resume (PDF)<span class="sr-only"> opens in a new tab</span></a>
-        <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.docx" download>Download resume (DOCX)</a>
-        <button class="btn" type="button" id="copy-email" data-email="stefanecerezo1127@gmail.com">Copy email address</button>
-      </div>
-      <p class="status" id="status" role="status" aria-live="polite"></p>
-      <p class="note">The resume is a 2-page, plain-text-friendly version that applicant tracking systems can read.</p>
-    </div>
-  </section>
+<main id="main" class="stage">
 
-  <section class="block" id="projects" aria-labelledby="h-projects">
-    <div class="wrap">
-      <h2 id="h-projects">Projects</h2>
-      <p class="intro">Four projects, newest first. Select a project to read more, and select it again to close it.</p>
-      <div class="index">
-
-        <details class="proj" open>
-          <summary>
-            <h3>OBE Curriculum Management System</h3>
-            <span class="when">Oct 2026 to present</span>
-            <span class="role">Project Manager and Documentation. Client project for the University of La Salette.</span>
-            <span class="toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="detail">
-            <p>An Outcome-Based Education curriculum system for the university, with 6 user roles and a 7-step approval workflow from Program Head to Dean. It covers CHED CMO and SDG alignment, drag-and-drop planning and attainment tracking.</p>
-            <ul>
-              <li>A local AI assistant drafts learning outcomes, suggests mappings and reads CHED memorandum orders. A person reviews every suggestion and each one is logged, following the university's AI policy.</li>
-              <li>About 90 API endpoints with 69 automated tests, Docker and HTTPS deployment, nightly backups and a one-click Windows setup.</li>
-            </ul>
-            <p class="stack"><strong>Built with</strong> Flutter, FastAPI, PostgreSQL, Ollama, Docker, nginx</p>
-          </div>
-        </details>
-
-        <details class="proj">
-          <summary>
-            <h3>GIS-Based Solar Installation Tracking System</h3>
-            <span class="when">2026</span>
-            <span class="role">Lead Developer. Capstone project, team.</span>
-            <span class="toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="detail">
-            <p>A web app for a solar installation company to map, track and analyze its installation records. I led backend and frontend development and added an AI chatbot.</p>
-            <p class="stack"><strong>Built with</strong> PHP, PostgreSQL/PostGIS, Leaflet.js, Chart.js</p>
-          </div>
-        </details>
-
-        <details class="proj">
-          <summary>
-            <h3>Barangay Health Center Management System</h3>
-            <span class="when">School project</span>
-            <span class="role">Team project for a real client, the Barangay Bantug Health Center in Ramon, Isabela.</span>
-            <span class="toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="detail">
-            <p>Our course asked each team to find a real client and build a solution to its problem. We chose the health center in Barangay Bantug and built a management system for it in VB.NET.</p>
-            <p class="stack"><strong>Built with</strong> VB.NET</p>
-            <p class="links"><a href="https://github.com/stfcrz11/vb.net-BarangayHealthCenterManagementSystem" target="_blank" rel="noopener">View source on GitHub<span class="sr-only"> opens in a new tab</span></a></p>
-          </div>
-        </details>
-
-        <details class="proj">
-          <summary>
-            <h3>Sili-Tubig Clash</h3>
-            <span class="when">Sep 2026</span>
-            <span class="role">Developer Support. Team of five, 2nd Runner Up at CODE &amp; CONQUER Cagayan Valley.</span>
-            <span class="toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="detail">
-            <p>A digital version of the Filipino street game Sili-sili, Maanghang, Tubig-tubig, Malamig. It has cheat-resistant LAN multiplayer: the host checks every action, players join with a 4-digit lobby code, and a dropped player can rejoin a match within 45 seconds.</p>
-            <ul>
-              <li>Builds for Windows, macOS and Android, with every sound effect generated from code.</li>
-            </ul>
-            <p class="stack"><strong>Built with</strong> Godot, GDScript, ENet networking, Python/NumPy</p>
-          </div>
-        </details>
-
+  <!-- HOME -->
+  <section class="view home" id="home" aria-labelledby="name">
+    <div>
+      <h1 id="name" tabindex="-1"><span class="first">Stefane Ballad</span><span class="last">Cerezo</span></h1>
+      <p class="role">IT Student and Developer</p>
+      <p class="lead">I build <strong>web systems, GIS maps and games</strong>. I'm a BS Information Technology student in Santiago City, Isabela, and I'm looking for an on-the-job training placement in software development.</p>
+      <div class="row">
+        <a class="btn" href="#resume" data-go="resume">Resume</a>
+        <a class="btn solid" href="#portfolio" data-go="portfolio">Portfolio</a>
       </div>
     </div>
+    <div class="shots" aria-hidden="true">
+      <div class="shot b"><img src="assets/screens/obe-mapping.webp" alt="" width="1200" height="833"></div>
+      <div class="shot a"><img src="assets/screens/obe-dashboard.webp" alt="" width="1200" height="833"></div>
+      <div class="shot c"><img src="assets/screens/obe-structure.webp" alt="" width="1200" height="833"></div>
+    </div>
   </section>
 
-  <section class="block" id="certifications" aria-labelledby="h-certs">
-    <div class="wrap">
-      <h2 id="h-certs">Certifications</h2>
-      <p class="intro">Each certificate has a link to the issuer's own verification page.</p>
-      <div class="certs">
-        <article class="cert">
-          <h3>NetOps Certified Engineer (NTO-101)</h3>
-          <p>Issued by AppKademiya, 2026.</p>
-          <a href="https://appkademiya.online/verify/CERT-NETOPS-CERTIFIED-ENGINEER-NTO101-20260902-64F416A28E06" target="_blank" rel="noopener">Verify this certificate<span class="sr-only"> opens in a new tab</span></a>
-        </article>
-        <article class="cert">
-          <h3>Network Support and Security</h3>
-          <p>Cisco Networking Academy. Network troubleshooting and user access control skills.</p>
-          <a href="https://www.netacad.com/certificates/?issuanceId=d34c61c6-ace0-412f-afc3-43d438178b63" target="_blank" rel="noopener">Verify this certificate<span class="sr-only"> opens in a new tab</span></a>
-        </article>
+  <!-- ABOUT -->
+  <section class="view" id="about" aria-labelledby="h-about" hidden>
+    <div class="about">
+      <div>
+        <h2 id="h-about" tabindex="-1">About</h2>
+        <a class="email" href="mailto:stefanecerezo1127@gmail.com">stefanecerezo1127@gmail.com</a>
+        <p class="first-p">I'm a BS Information Technology student at the University of La Salette in Santiago City.</p>
+        <p>I like building systems that real people use. I'm the Project Manager and documentation lead on the university's OBE Curriculum Management System, I led development of our solar-installation mapping capstone, and I supported a team of five that placed 2nd Runner Up in the DOST Region 2 game development challenge.</p>
+        <p>I'm looking for an OJT placement where I can keep building, and learn from a team that ships software.</p>
+        <div class="facts">
+          <div>Education <span>BS Information Technology, University of La Salette, 2023 to present</span></div>
+          <div>Based in <span>Santiago City, Isabela</span></div>
+          <div>Looking for <span>OJT in software development</span></div>
+        </div>
+        <div class="row" style="margin-top:28px">
+          <a class="btn solid" href="mailto:stefanecerezo1127@gmail.com?subject=OJT%20inquiry">Write an email</a>
+          <a class="btn" href="#resume" data-go="resume">See my resume</a>
+        </div>
+      </div>
+      <div class="mono" aria-hidden="true"><b>SC</b><small>Santiago City, Isabela</small></div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="view" id="resume" aria-labelledby="h-resume" hidden>
+    <h2 id="h-resume" tabindex="-1">Resume</h2>
+    <p class="sub">The short version. The full resume is a plain, ATS-friendly document you can download below.</p>
+    <div class="cols">
+
+      <div>
+        <section aria-labelledby="h-skills">
+          <h3 id="h-skills">SKILLS</h3>
+          <span class="group-label">Programming</span>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>C++</li><li>VB.NET</li><li>GDScript</li></ul>
+          <span class="group-label">Frameworks and data</span>
+          <ul class="chips"><li>Flutter</li><li>FastAPI</li><li>PostgreSQL/PostGIS</li><li>MySQL</li><li>Leaflet.js</li><li>Chart.js</li><li>Godot</li><li>Docker</li></ul>
+          <span class="group-label">Tools</span>
+          <ul class="chips"><li>Git and GitHub</li><li>VS Code</li><li>Word, Excel, PowerPoint</li><li>Canva</li></ul>
+        </section>
+        <section aria-labelledby="h-lang">
+          <h3 id="h-lang">LANGUAGES</h3>
+          <ul class="simple"><li>English (fluent)</li><li>Filipino (native)</li></ul>
+        </section>
+        <section aria-labelledby="h-int">
+          <h3 id="h-int">INTERESTS</h3>
+          <ul class="simple"><li>Software development</li><li>Tech entrepreneurship</li></ul>
+        </section>
+      </div>
+
+      <div>
+        <section aria-labelledby="h-exp">
+          <h3 id="h-exp">PROJECTS AND ROLES</h3>
+          <ul class="timeline">
+            <li><span class="dot">Oct 2026</span><strong>OBE Curriculum Management System</strong><span>Project Manager and Documentation</span></li>
+            <li><span class="dot">Sep 2026</span><strong>Sili-Tubig Clash</strong><span>Developer Support, 2nd Runner Up at DOST Region 2</span></li>
+            <li><span class="dot">2026</span><strong>SolarCORE (capstone)</strong><span>Lead Developer</span></li>
+            <li><span class="dot">School</span><strong>Barangay Health Center Management System</strong><span>Client-based course project, Bantug, Ramon, Isabela</span></li>
+            <li><span class="dot">A.Y. 24–26</span><strong>Minutes Secretary, CIT Local Council</strong><span>University of La Salette</span></li>
+          </ul>
+        </section>
+        <section aria-labelledby="h-edu">
+          <h3 id="h-edu">EDUCATION</h3>
+          <ul class="cert-list">
+            <li><strong>BS Information Technology</strong><span>University of La Salette, 2023 to present</span></li>
+            <li><strong>STEM, Senior High School</strong><span>University of La Salette, 2021 to 2023</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <div>
+        <section aria-labelledby="h-cert">
+          <h3 id="h-cert">CERTIFICATIONS</h3>
+          <ul class="cert-list">
+            <li><strong>NetOps Certified Engineer (NTO-101)</strong><span>AppKademiya, 2026</span><a href="https://appkademiya.online/verify/CERT-NETOPS-CERTIFIED-ENGINEER-NTO101-20260902-64F416A28E06" target="_blank" rel="noopener">Verify certificate<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><strong>Network Support and Security</strong><span>Cisco Networking Academy</span><a href="https://www.netacad.com/certificates/?issuanceId=d34c61c6-ace0-412f-afc3-43d438178b63" target="_blank" rel="noopener">Verify certificate<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="h-awards">
+          <h3 id="h-awards">RECOGNITION</h3>
+          <ul class="cert-list">
+            <li><strong>2nd Runner Up, Team Category</strong><span>CODE &amp; CONQUER Cagayan Valley, DOST Region 2, Sep 2026</span></li>
+            <li><strong>Emerging Programmer</strong><span>College of Information Technology, Jun 2026</span></li>
+            <li><strong>3rd Runner Up, Team Category</strong><span>Tagisan ng Talino, Oct 2024</span></li>
+          </ul>
+          <p style="font-size:13px;color:var(--muted)">More awards and activities are in the full resume.</p>
+        </section>
       </div>
     </div>
-  </section>
-
-  <section class="block" id="recognition" aria-labelledby="h-rec">
-    <div class="wrap">
-      <h2 id="h-rec">Recognition</h2>
-      <p class="intro">Competitions and awards, newest first.</p>
-      <ol class="rows">
-        <li><time datetime="2026-09">Sep 2026</time><div><span class="what">2nd Runner Up, Team Category</span><span class="where">CODE &amp; CONQUER Cagayan Valley: E-Sports Game Dev Challenge, DOST Region 2</span></div></li>
-        <li><time datetime="2026-06">Jun 2026</time><div><span class="what">Emerging Programmer</span><span class="where">College of Information Technology, University of La Salette (A.Y. 2024–2025)</span></div></li>
-        <li><time datetime="2024-10">Oct 2024</time><div><span class="what">3rd Runner Up, Team Category</span><span class="where">Tagisan ng Talino, University of La Salette</span></div></li>
-        <li><time datetime="2024-10">Oct 2024</time><div><span class="what">Participant, Individual Category</span><span class="where">35th National Statistics Month: IT Quiz Show, Regional Statistics Committee (Region II)</span></div></li>
-        <li><time datetime="2024-03">Mar 2024</time><div><span class="what">Participant, Team Category</span><span class="where">Quiz Adventure, University of La Salette</span></div></li>
-        <li><time datetime="2019-12">Dec 2019</time><div><span class="what">2nd Runner-Up, Paired Category</span><span class="where">Pamphlet-Making Competition, University of La Salette. I designed the layout and graphics in Canva and helped write the content.</span></div></li>
-      </ol>
+    <div class="row dl">
+      <a class="btn solid" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Open full resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.docx" download>Download as Word (DOCX)</a>
     </div>
   </section>
 
-  <section class="block" id="involvement" aria-labelledby="h-inv">
-    <div class="wrap">
-      <h2 id="h-inv">Involvement</h2>
-      <p class="intro">Leadership roles and events, newest first.</p>
-      <ol class="rows">
-        <li><time datetime="2026-05">May 2026</time><div><span class="what">Organizing Team Member</span><span class="where">College of Information Technology Capstone Colloquium, University of La Salette</span></div></li>
-        <li><time datetime="2026-04">Apr 2026</time><div><span class="what">16th ICT Roadshow</span><span class="where">Four sessions: AI in everyday learning, the data science workflow, smart searching with AI, and building workflows with n8n.</span></div></li>
-        <li><time datetime="2026-02">Feb 2026</time><div><span class="what">SDG Fair Symposium</span><span class="where">Student Executive Office, University of La Salette</span></div></li>
-        <li><time datetime="2024-08">A.Y. 2024–2026</time><div><span class="what">Minutes Secretary, CIT Local Council</span><span class="where">Recorded the minutes of officer and general meetings for two school years, and kept the department's organization records.</span></div></li>
-        <li><time datetime="2018-11">Nov 2018</time><div><span class="what">TUKLAS 2018</span><span class="where">Investigatory Project seminar-workshop, University of La Salette High School</span></div></li>
-      </ol>
-    </div>
-  </section>
+  <!-- PORTFOLIO -->
+  <section class="view" id="portfolio" aria-labelledby="h-portfolio" hidden>
+    <h2 id="h-portfolio" tabindex="-1">Portfolio</h2>
+    <p class="sub">Four projects, newest first. Select a screenshot to open the gallery.</p>
 
-  <section class="block" id="skills" aria-labelledby="h-skills">
-    <div class="wrap">
-      <h2 id="h-skills" style="margin-bottom:24px">Skills and education</h2>
-      <dl class="facts">
-        <dt>Programming</dt><dd>HTML, CSS, JavaScript, PHP, C++, VB.NET, GDScript</dd>
-        <dt>Frameworks and data</dt><dd>Flutter, FastAPI, PostgreSQL/PostGIS, Leaflet.js, Chart.js, Godot, Docker</dd>
-        <dt>Tools</dt><dd>Git and GitHub, Visual Studio Code, Microsoft Word, Excel and PowerPoint, Canva</dd>
-        <dt>Languages</dt><dd>English (fluent), Filipino (native)</dd>
-        <dt>Interests</dt><dd>Software development, tech entrepreneurship</dd>
-        <dt>Education</dt><dd>BS Information Technology, University of La Salette, 2023 to present. STEM, 2021 to 2023. Junior High School, 2017 to 2021.</dd>
-      </dl>
-    </div>
-  </section>
+    <!--
+      HOW TO ADD SCREENSHOTS TO A CARD
+      1. Put the image in assets/screens/ (webp, jpg or png, about 1200px wide).
+      2. In the card's <button class="thumb">, set the <img src> and add the file to data-shots,
+         separated by "|" as  file::caption  pairs.
+      3. A card with no screenshots uses <div class="thumb none"> instead of the <button>.
+    -->
+    <div class="cards">
 
-  <section class="block contact" id="contact" aria-labelledby="h-contact">
-    <div class="wrap">
-      <h2 id="h-contact" style="margin-bottom:16px">Contact</h2>
-      <p class="email"><a href="mailto:stefanecerezo1127@gmail.com">stefanecerezo1127@gmail.com</a></p>
-      <p>Mobile: <a href="tel:+639552540848">0955 254 0848</a><br>
-      Santa Rosa, Santiago City, Isabela</p>
-      <div class="actions">
-        <a class="btn primary" href="mailto:stefanecerezo1127@gmail.com?subject=OJT%20inquiry">Write an email</a>
-        <a class="btn" href="https://github.com/stfcrz11" target="_blank" rel="noopener">GitHub profile<span class="sr-only"> opens in a new tab</span></a>
-        <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Resume (PDF)<span class="sr-only"> opens in a new tab</span></a>
-      </div>
+      <article class="card" aria-labelledby="p-obe">
+        <button class="thumb" type="button" data-open="OBE Curriculum Management System"
+          data-sub="Project Manager and Documentation. Client project for the University of La Salette."
+          data-shots="assets/screens/obe-dashboard.webp::Dashboard: draft, active and superseded curricula, projects, insights, tasks and recent activity.|assets/screens/obe-overview.webp::Workspace overview: curriculum health and the green, amber or red checks for each stage.|assets/screens/obe-frameworks.webp::Frameworks: PLOs tied to the PVMGO and linked to CHED CMO requirements, with coverage.|assets/screens/obe-mapping.webp::OBE mapping: courses supporting each PLO, above the course-by-PLO heat map.|assets/screens/obe-structure.webp::Structure: courses by year and semester, dragged between semesters.|assets/screens/obe-course-designer.webp::Course designer: code, title, type, prerequisites, faculty and content.|assets/screens/obe-add-course.webp::Add Course, step 2 of 3: a CLO with its action verb, Bloom's level and the PLOs it supports.|assets/screens/obe-public-preview.webp::Public preview: the curriculum's public page, with the Dean's Publish button.">
+          <img src="assets/screens/obe-dashboard.webp" alt="OBE Curriculum dashboard showing curriculum projects, insights and tasks" width="1200" height="833" loading="lazy">
+          <span class="more">8 screenshots</span>
+        </button>
+        <div class="body">
+          <h3 id="p-obe">OBE Curriculum Management System</h3>
+          <p class="meta">Client project, University of La Salette · Oct 2026 to present · Project Manager and Documentation</p>
+          <p class="what">Designs outcome-based curricula: 6 user roles, a 7-step approval workflow from Program Head to Dean, CHED CMO and SDG coverage, a course-by-PLO heat map and drag-and-drop planning. A local AI assistant drafts outcomes, and a person reviews every suggestion.</p>
+          <ul class="chips"><li>Flutter</li><li>FastAPI</li><li>PostgreSQL</li><li>Ollama</li><li>Docker</li></ul>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="p-solar">
+        <div class="thumb none" role="img" aria-label="No screenshots yet for SolarCORE"><b>SC</b><small>Screenshots coming soon</small></div>
+        <div class="body">
+          <h3 id="p-solar">SolarCORE</h3>
+          <p class="meta">Capstone project (team) · 2026 · Lead Developer</p>
+          <p class="what">A GIS-based web app for a solar installation company to map, track and analyze its installation records, with an AI chatbot.</p>
+          <ul class="chips"><li>PHP</li><li>PostgreSQL/PostGIS</li><li>Leaflet.js</li><li>Chart.js</li></ul>
+          <div class="links"><a class="btn sm" href="https://github.com/stfcrz11/SolarCORE_docs" target="_blank" rel="noopener">Project docs on GitHub<span class="sr-only"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="p-bhc">
+        <div class="thumb none" role="img" aria-label="No screenshots yet for the Barangay Health Center system"><b>BH</b><small>Screenshots coming soon</small></div>
+        <div class="body">
+          <h3 id="p-bhc">Barangay Health Center Management System</h3>
+          <p class="meta">Course project for a real client · Barangay Bantug, Ramon, Isabela</p>
+          <p class="what">Resident records for the health center, grouped by age band (0–59 months, 1–19, 20–59, senior citizens) plus pregnant women. Midwife and health-worker sign-in, purok-based dashboard counts, printable reports, user management and system logs.</p>
+          <ul class="chips"><li>VB.NET</li><li>Windows Forms</li><li>MySQL</li><li>Report Viewer</li></ul>
+          <div class="links"><a class="btn sm" href="https://github.com/stfcrz11/vb.net-BarangayHealthCenterManagementSystem" target="_blank" rel="noopener">Source on GitHub<span class="sr-only"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="p-sili">
+        <div class="thumb none" role="img" aria-label="No screenshots yet for Sili-Tubig Clash"><b>ST</b><small>Screenshots coming soon</small></div>
+        <div class="body">
+          <h3 id="p-sili">Sili-Tubig Clash</h3>
+          <p class="meta">Team of five · Sep 2026 · Developer Support · 2nd Runner Up, DOST Region 2</p>
+          <p class="what">A digital version of the Filipino street game Sili-sili, Maanghang, Tubig-tubig, Malamig. Cheat-resistant LAN multiplayer with 4-digit lobby codes and a 45-second rejoin, on Windows, macOS and Android.</p>
+          <ul class="chips"><li>Godot</li><li>GDScript</li><li>ENet</li><li>Python/NumPy</li></ul>
+        </div>
+      </article>
+
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>&copy; <span id="year">2026</span> Stefane Ballad Cerezo</span>
-    <a href="#">Back to top</a>
+<!-- gallery -->
+<dialog id="gallery" aria-labelledby="g-title">
+  <div class="dlg-head">
+    <div><h3 id="g-title"></h3><p id="g-sub"></p></div>
+    <button class="btn sm" type="button" id="g-close">Close</button>
+  </div>
+  <div class="dlg-stage"><img id="g-img" alt="" width="1200" height="833"></div>
+  <p class="dlg-cap" id="g-cap" aria-live="polite"></p>
+  <div class="dlg-bar">
+    <button class="btn sm" type="button" id="g-prev">Previous</button>
+    <span class="count" id="g-count"></span>
+    <button class="btn sm" type="button" id="g-next">Next</button>
+  </div>
+</dialog>
+
+<footer class="strip">
+  <div class="in">
+    <div class="icons">
+      <a href="https://github.com/stfcrz11" target="_blank" rel="noopener" aria-label="GitHub profile (opens in a new tab)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
+      <a href="mailto:stefanecerezo1127@gmail.com" aria-label="Send an email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+    <span class="copy">&copy; <span id="year">2026</span> Stefane Ballad Cerezo</span>
+    <div class="icons">
+      <button type="button" id="fs" aria-label="Toggle full screen" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+      </button>
+    </div>
   </div>
 </footer>
 

@@ -1,60 +1,90 @@
 (function () {
-  var root = document.documentElement;
+  "use strict";
 
-  // Theme: reversible, remembered, labelled with the action it performs.
-  var themeBtn = document.getElementById("theme");
-  function currentTheme() {
-    return root.getAttribute("data-theme") ||
-      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  }
-  function label() { themeBtn.textContent = currentTheme() === "dark" ? "Light theme" : "Dark theme"; }
-  try { var saved = localStorage.getItem("theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
-  label();
-  themeBtn.addEventListener("click", function () {
-    var next = currentTheme() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("theme", next); } catch (e) {}
-    label();
-  });
+  /* ---------- views (Home, About, Resume, Portfolio) ---------- */
+  var ids = ["home", "about", "resume", "portfolio"];
+  var titles = { home: "Home", about: "About", resume: "Resume", portfolio: "Portfolio" };
+  var views = {};
+  var links = Array.prototype.slice.call(document.querySelectorAll("[data-view]"));
+  ids.forEach(function (id) { views[id] = document.getElementById(id); });
+  var first = true;
 
-  // Copy email with visible, announced feedback. Falls back to mailto text if copy fails.
-  var copyBtn = document.getElementById("copy-email");
-  var status = document.getElementById("status");
-  var email = copyBtn.getAttribute("data-email");
-  var timer;
-  function say(msg) {
-    status.textContent = msg;
-    clearTimeout(timer);
-    timer = setTimeout(function () { status.textContent = ""; }, 4000);
-  }
-  copyBtn.addEventListener("click", function () {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(email).then(
-        function () { say("Email address copied: " + email); },
-        function () { say("Could not copy. Select the address and copy it: " + email); }
-      );
-    } else {
-      say("Copy is not available here. The address is " + email);
+  function show(id, focus) {
+    if (!views[id]) id = "home";
+    ids.forEach(function (k) { views[k].hidden = k !== id; });
+    links.forEach(function (a) {
+      if (a.getAttribute("data-view") === id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    document.title = (id === "home" ? "" : titles[id] + " | ") + "Stefane Ballad Cerezo";
+    var v = views[id];
+    v.classList.remove("enter");
+    void v.offsetWidth;
+    if (!first) v.classList.add("enter");
+    window.scrollTo(0, 0);
+    if (focus) {
+      var h = v.querySelector("[tabindex='-1']");
+      if (h) h.focus({ preventScroll: true });
     }
+    first = false;
+  }
+
+  function fromHash() { return (location.hash || "#home").slice(1); }
+  window.addEventListener("hashchange", function () { show(fromHash(), true); });
+  show(fromHash(), false);
+
+  /* ---------- gallery dialog ---------- */
+  var dlg = document.getElementById("gallery");
+  var gImg = document.getElementById("g-img");
+  var gTitle = document.getElementById("g-title");
+  var gSub = document.getElementById("g-sub");
+  var gCap = document.getElementById("g-cap");
+  var gCount = document.getElementById("g-count");
+  var prev = document.getElementById("g-prev");
+  var next = document.getElementById("g-next");
+  var shots = [];
+  var idx = 0;
+
+  function render() {
+    var s = shots[idx];
+    gImg.src = s.src;
+    gImg.alt = s.cap;
+    gCap.textContent = s.cap;
+    gCount.textContent = "Screenshot " + (idx + 1) + " of " + shots.length;
+    prev.disabled = shots.length < 2;
+    next.disabled = shots.length < 2;
+  }
+  function step(d) { idx = (idx + d + shots.length) % shots.length; render(); }
+
+  Array.prototype.forEach.call(document.querySelectorAll("[data-open]"), function (btn) {
+    btn.addEventListener("click", function () {
+      shots = btn.getAttribute("data-shots").split("|").map(function (p) {
+        var parts = p.split("::");
+        return { src: parts[0], cap: parts[1] || "" };
+      });
+      idx = 0;
+      gTitle.textContent = btn.getAttribute("data-open");
+      gSub.textContent = btn.getAttribute("data-sub") || "";
+      render();
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open", "");
+    });
+  });
+  prev.addEventListener("click", function () { step(-1); });
+  next.addEventListener("click", function () { step(1); });
+  document.getElementById("g-close").addEventListener("click", function () { dlg.close(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") { step(-1); e.preventDefault(); }
+    if (e.key === "ArrowRight") { step(1); e.preventDefault(); }
   });
 
-  // "You are here": mark the nav link of the section in view.
-  var links = Array.prototype.slice.call(document.querySelectorAll(".bar nav a"));
-  var map = {};
-  links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          links.forEach(function (a) { a.removeAttribute("aria-current"); });
-          var a = map[en.target.id];
-          if (a) a.setAttribute("aria-current", "true");
-        }
-      });
-    }, { rootMargin: "-35% 0px -60% 0px" });
-    Object.keys(map).forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) io.observe(el);
+  /* ---------- full screen toggle (only where supported) ---------- */
+  var fs = document.getElementById("fs");
+  if (document.fullscreenEnabled) {
+    fs.hidden = false;
+    fs.addEventListener("click", function () {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
     });
   }
 

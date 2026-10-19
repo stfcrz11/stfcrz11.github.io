@@ -3,26 +3,25 @@
 Static site (HTML, CSS, a little JavaScript). No build step.
 
 ## Files
-- `index.html`, `style.css`, `script.js` – the site
+- `index.html`, `style.css`, `script.js` – the site (Home, About, Resume and Portfolio views, switched with the top menu)
 - `assets/Stefane-Cerezo-Resume-ATS.pdf` and `.docx` – the resume the site links to
+- `assets/screens/` – project screenshots used by the Portfolio cards
 
 ## Publish on GitHub Pages
-1. Create a repository named **`stfcrz11.github.io`** (your username plus `.github.io`). The resume already links to `https://stfcrz11.github.io`.
-2. Upload everything in this folder, keeping the `assets` folder.
-3. Open **Settings → Pages**, set **Source** to *Deploy from a branch*, choose `main` and `/ (root)`, then save.
-4. The site goes live at `https://stfcrz11.github.io/` after about a minute.
+1. Create a repository named **`stfcrz11.github.io`**.
+2. Upload everything in this folder (keep `assets/` and its `screens/` folder). `index.html` must be at the top level.
+3. **Settings → Pages**: Source *Deploy from a branch*, branch `main`, folder `/ (root)`, Save.
+4. The site goes live at `https://stfcrz11.github.io/` in a minute or two.
 
-If you use a different repository name, the site will be at `https://stfcrz11.github.io/<repo-name>/`. Update the portfolio link in the resume header to match.
+To update an existing site, upload the changed files again (Add file → Upload files) and commit.
 
-## How the design applies Shneiderman's Eight Golden Rules
-1. **Consistency** – one colour, type and spacing system; every list, button and link behaves the same way throughout.
-2. **Shortcuts** – "Skip to content" link, a sticky bar with section links, and a Resume button that is always visible.
-3. **Informative feedback** – the current section is highlighted in the bar; "Copy email address" confirms with a message; buttons show hover and keyboard focus.
-4. **Closure** – actions say what happened ("Email address copied"), and links that open a new tab say so for screen readers.
-5. **Error prevention** – text labels instead of icon-only controls, large tap targets, and a visible email address in case copying fails.
-6. **Easy reversal** – project rows open and close, and the theme toggle switches back.
-7. **User control** – no autoplay or scroll-triggered animation; it respects reduced-motion and light/dark system settings.
-8. **Low memory load** – short navigation, plain section names, the same details in the same order for every project.
+## Add screenshots to a project card
+Three cards (SolarCORE, Barangay Health Center, Sili-Tubig Clash) show "Screenshots coming soon" until you add images.
+1. Save screenshots in `assets/screens/` (webp, jpg or png, about 1200 px wide).
+2. In `index.html`, find the project's card. Replace its `<div class="thumb none" ...>` with the same block the OBE card uses:
+   a `<button class="thumb" type="button" data-open="Project name" data-sub="One line about your role" data-shots="assets/screens/file1.png::Caption 1|assets/screens/file2.png::Caption 2">` containing an `<img src="assets/screens/file1.png" alt="Describe the screenshot" width="1200" height="833">` and `<span class="more">2 screenshots</span>`.
+3. Commit. The card now opens a gallery with arrow-key and button navigation.
 
-## Updating
-Replace the files in `assets/` with the same names to update the resume, or edit `index.html` directly.
+## Design notes
+Layout follows the reference dark portfolio (top menu with phone number, big two-weight name, outlined buttons, three-column resume). There is no photo of you; the home view shows the OBE system's screens instead.
+Usability follows Shneiderman's Eight Golden Rules: consistent components, a skip link and keyboard shortcuts in the gallery, a highlighted "you are here" menu item, clear feedback on every control, closable gallery, back button works between views, no hidden gestures, and short labelled menus.
