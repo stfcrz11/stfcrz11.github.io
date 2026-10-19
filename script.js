@@ -1,37 +1,38 @@
 (function () {
   "use strict";
 
-  /* ---------- views (Home, About, Resume, Portfolio) ---------- */
-  var ids = ["home", "about", "resume", "portfolio"];
-  var titles = { home: "Home", about: "About", resume: "Resume", portfolio: "Portfolio" };
-  var views = {};
-  var links = Array.prototype.slice.call(document.querySelectorAll("[data-view]"));
-  ids.forEach(function (id) { views[id] = document.getElementById(id); });
-  var first = true;
+  /* ---------- one-page navigation: highlight the section in view ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".top nav a"));
+  var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  var top = document.querySelector(".top");
 
-  function show(id, focus) {
-    if (!views[id]) id = "home";
-    ids.forEach(function (k) { views[k].hidden = k !== id; });
-    links.forEach(function (a) {
-      if (a.getAttribute("data-view") === id) a.setAttribute("aria-current", "page");
+  function onScroll() {
+    var y = window.scrollY + 120;
+    var current = 0;
+    sections.forEach(function (s, i) { if (s && s.offsetTop <= y) current = i; });
+    // At the very bottom, the last section is the one being read
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = sections.length - 1;
+    navLinks.forEach(function (a, i) {
+      if (i === current) a.setAttribute("aria-current", "true");
       else a.removeAttribute("aria-current");
     });
-    document.title = (id === "home" ? "" : titles[id] + " | ") + "Stefane Ballad Cerezo";
-    var v = views[id];
-    v.classList.remove("enter");
-    void v.offsetWidth;
-    if (!first) v.classList.add("enter");
-    window.scrollTo(0, 0);
-    if (focus) {
-      var h = v.querySelector("[tabindex='-1']");
-      if (h) h.focus({ preventScroll: true });
-    }
-    first = false;
+    top.classList.toggle("scrolled", window.scrollY > 4);
   }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
 
-  function fromHash() { return (location.hash || "#home").slice(1); }
-  window.addEventListener("hashchange", function () { show(fromHash(), true); });
-  show(fromHash(), false);
+  /* ---------- reveal sections as they scroll into view ---------- */
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduce) {
+    var targets = document.querySelectorAll(".strip-bar, .about > *, .sec-head, .card, .panel, .cta");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in-view"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(targets, function (el) { el.classList.add("reveal"); io.observe(el); });
+  }
 
   /* ---------- gallery dialog ---------- */
   var dlg = document.getElementById("gallery");
@@ -78,15 +79,29 @@
     if (e.key === "ArrowRight") { step(1); e.preventDefault(); }
   });
 
-  /* ---------- full screen toggle (only where supported) ---------- */
-  var fs = document.getElementById("fs");
-  if (document.fullscreenEnabled) {
-    fs.hidden = false;
-    fs.addEventListener("click", function () {
-      if (document.fullscreenElement) document.exitFullscreen();
-      else document.documentElement.requestFullscreen();
-    });
+  /* ---------- light / dark theme (follows the system until the visitor picks one) ---------- */
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("theme");
+  var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+  function currentTheme() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return darkQuery && darkQuery.matches ? "dark" : "light";
   }
+  function labelTheme() {
+    var other = currentTheme() === "dark" ? "light" : "dark";
+    themeBtn.setAttribute("aria-label", "Switch to " + other + " theme");
+    themeBtn.title = "Switch to " + other + " theme";
+  }
+  themeBtn.addEventListener("click", function () {
+    var other = currentTheme() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", other);
+    try { localStorage.setItem("theme", other); } catch (e) {}
+    labelTheme();
+  });
+  if (darkQuery && darkQuery.addEventListener) darkQuery.addEventListener("change", labelTheme);
+  labelTheme();
 
   document.getElementById("year").textContent = new Date().getFullYear();
 })();

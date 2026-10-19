@@ -5,11 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stefane Ballad Cerezo | IT student and developer</title>
 <meta name="description" content="Portfolio of Stefane Ballad Cerezo, a BS Information Technology student at the University of La Salette in Santiago City, Isabela, looking for an OJT placement in software development.">
-<meta name="theme-color" content="#0a0e13">
-<script>document.documentElement.className = "js";</script>
+<meta name="theme-color" content="#f7f2ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16120f" media="(prefers-color-scheme: dark)">
+<script>
+  document.documentElement.className = "js";
+  try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,146 +21,105 @@
 
 <header class="top">
   <div class="in">
+    <a class="brand" href="#home">Stefane<span>.</span></a>
     <nav aria-label="Main">
       <ul>
-        <li><a href="#home" data-view="home">Home</a></li>
-        <li><a href="#about" data-view="about">About</a></li>
-        <li><a href="#resume" data-view="resume">Resume</a></li>
-        <li><a href="#portfolio" data-view="portfolio">Portfolio</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="phone" href="tel:+639552540848">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
-      <span>0955 254 0848</span>
-    </a>
+    <div class="end">
+      <a class="icon-btn" href="tel:+639552540848" aria-label="Call 0955 254 0848" title="0955 254 0848">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>
+      </a>
+      <button class="icon-btn" type="button" id="theme" aria-label="Switch to dark theme">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22a10 10 0 01-1.2-19.93 1 1 0 01.95 1.57A7 7 0 0020.36 12a1 1 0 011.57.95A10 10 0 0112.3 22z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v1a1 1 0 01-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM4.22 4.22a1 1 0 011.42 0l.7.7a1 1 0 01-1.41 1.42l-.71-.71a1 1 0 010-1.41zm13.44 13.44a1 1 0 011.41 0l.71.7a1 1 0 01-1.42 1.42l-.7-.71a1 1 0 010-1.41zM2 12a1 1 0 011-1h1a1 1 0 010 2H3a1 1 0 01-1-1zm17 0a1 1 0 011-1h1a1 1 0 010 2h-1a1 1 0 01-1-1zM4.22 19.78a1 1 0 010-1.42l.71-.7a1 1 0 011.41 1.41l-.7.71a1 1 0 01-1.42 0zM17.66 6.34a1 1 0 010-1.42l.7-.7a1 1 0 011.42 1.41l-.71.71a1 1 0 01-1.41 0z"/></svg>
+      </button>
+      <a class="btn dark sm hire" href="mailto:stefanecerezo1127@gmail.com?subject=OJT%20inquiry">Hire me</a>
+    </div>
   </div>
 </header>
 
-<main id="main" class="stage">
+<main id="main">
 
   <!-- HOME -->
-  <section class="view home" id="home" aria-labelledby="name">
-    <div>
-      <h1 id="name" tabindex="-1"><span class="first">Stefane Ballad</span><span class="last">Cerezo</span></h1>
-      <p class="role">IT Student and Developer</p>
-      <p class="lead">I build <strong>web systems, GIS maps and games</strong>. I'm a BS Information Technology student in Santiago City, Isabela, and I'm looking for an on-the-job training placement in software development.</p>
+  <section class="hero wrap" id="home" aria-labelledby="name">
+    <div class="hero-text">
+      <p class="eyebrow">Open to OJT · Software development</p>
+      <h1 id="name"><span class="serif">Stefane Ballad</span> <span class="script">Cerezo</span></h1>
+      <p class="role">IT student and developer</p>
+      <p class="lead">I build <strong>web systems, GIS maps and games</strong>. I'm a BS Information Technology student in Santiago City, Isabela, looking for an on-the-job training placement.</p>
       <div class="row">
-        <a class="btn" href="#resume" data-go="resume">Resume</a>
-        <a class="btn solid" href="#portfolio" data-go="portfolio">Portfolio</a>
+        <a class="btn dark" href="#projects">See my projects <span aria-hidden="true">→</span></a>
+        <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener"><span class="play" aria-hidden="true">▸</span> View resume<span class="sr-only"> (PDF, opens in a new tab)</span></a>
       </div>
     </div>
-    <div class="shots" aria-hidden="true">
-      <div class="shot b"><img src="assets/screens/obe-mapping.webp" alt="" width="1200" height="833"></div>
-      <div class="shot a"><img src="assets/screens/obe-dashboard.webp" alt="" width="1200" height="833"></div>
-      <div class="shot c"><img src="assets/screens/obe-structure.webp" alt="" width="1200" height="833"></div>
+
+    <ul class="stats">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H4zM2 18h20v2H2z"/></svg></span><b>6</b><small>Projects built</small></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg></span><b>2nd</b><small>Runner Up, DOST Region 2</small></li>
+    </ul>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="sun"></div>
+      <figure class="screen main"><img src="assets/screens/obe-dashboard.webp" alt="" width="1200" height="833"></figure>
+      <figure class="screen side"><img src="assets/screens/solarcore-dashboard.webp" alt="" width="1200" height="589"></figure>
+      <div class="float-badge">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5zm-1.2 13.6l5.7-5.7-1.4-1.4-4.3 4.3-2.1-2.1-1.4 1.4z"/></svg></span>
+        <span><b>Certified</b><small>NetOps &amp; Cisco</small></span>
+      </div>
     </div>
+  </section>
+
+  <!-- WHAT I BUILD -->
+  <section class="wrap" aria-label="What I build">
+    <ul class="strip-bar">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 4h18v12H3zm2 2v8h14V6zM8 19h8v2H8z"/></svg></span><span><b>Web systems</b><small>PHP, Flutter, FastAPI</small></span></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 017 7c0 5-7 13-7 13S5 14 5 9a7 7 0 017-7zm0 4.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/></svg></span><span><b>GIS mapping</b><small>PostGIS, Leaflet.js</small></span></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h10a5 5 0 010 10c-1.6 0-2.4-1-3.2-2H10.2c-.8 1-1.6 2-3.2 2A5 5 0 017 7zm0 3v1.5H5.5v1H7V14h1v-1.5h1.5v-1H8V10zm9.5.5a1 1 0 100 2 1 1 0 000-2zm-2 2a1 1 0 100 2 1 1 0 000-2z"/></svg></span><span><b>Games</b><small>Godot, LAN multiplayer</small></span></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 011 1v12a1 1 0 01-1 1h-6v2h3v2H7v-2h3v-2H4a1 1 0 01-1-1V4a1 1 0 011-1zm1 2v6h14V5z"/></svg></span><span><b>Desktop apps</b><small>VB.NET, MySQL</small></span></li>
+    </ul>
   </section>
 
   <!-- ABOUT -->
-  <section class="view" id="about" aria-labelledby="h-about" hidden>
-    <div class="about">
-      <div>
-        <h2 id="h-about" tabindex="-1">About</h2>
-        <a class="email" href="mailto:stefanecerezo1127@gmail.com">stefanecerezo1127@gmail.com</a>
-        <p class="first-p">I'm a BS Information Technology student at the University of La Salette in Santiago City.</p>
-        <p>I like building systems that real people use. I'm the Project Manager and documentation lead on the university's OBE Curriculum Management System, I led development of our solar-installation mapping capstone, and I supported a team of five that placed 2nd Runner Up in the DOST Region 2 game development challenge.</p>
-        <p>I'm looking for an OJT placement where I can keep building, and learn from a team that ships software.</p>
-        <div class="facts">
-          <div>Education <span>BS Information Technology, University of La Salette, 2023 to present</span></div>
-          <div>Based in <span>Santiago City, Isabela</span></div>
-          <div>Looking for <span>OJT in software development</span></div>
-        </div>
-        <div class="row" style="margin-top:28px">
-          <a class="btn solid" href="mailto:stefanecerezo1127@gmail.com?subject=OJT%20inquiry">Write an email</a>
-          <a class="btn" href="#resume" data-go="resume">See my resume</a>
-        </div>
-      </div>
-      <div class="mono" aria-hidden="true"><b>SC</b><small>Santiago City, Isabela</small></div>
+  <section class="section wrap about" id="about" aria-labelledby="h-about">
+    <div>
+      <p class="eyebrow">About me</p>
+      <h2 id="h-about">Building systems <span class="script">people use</span></h2>
+      <p class="first-p">I'm a BS Information Technology student at the University of La Salette in Santiago City.</p>
+      <p>I'm the Project Manager and documentation lead on the university's OBE Curriculum Management System, I led development of our solar-installation mapping capstone, and I supported a team of five that placed 2nd Runner Up in the DOST Region 2 game development challenge.</p>
+      <p>I'm looking for an OJT placement where I can keep building, and learn from a team that ships software.</p>
+      <a class="email" href="mailto:stefanecerezo1127@gmail.com">stefanecerezo1127@gmail.com</a>
+    </div>
+    <div class="hi-card">
+      <span class="avatar" aria-hidden="true">SC</span>
+      <b>Stefane Ballad Cerezo</b>
+      <small>BSIT student · Santiago City, Isabela</small>
+      <ul>
+        <li><i aria-hidden="true">Ed</i><span>BS Information Technology, University of La Salette, 2023 to present</span></li>
+        <li><i aria-hidden="true">At</i><span>Based in Santiago City, Isabela</span></li>
+        <li><i aria-hidden="true">Go</i><span>Looking for OJT in software development</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- RESUME -->
-  <section class="view" id="resume" aria-labelledby="h-resume" hidden>
-    <h2 id="h-resume" tabindex="-1">Resume</h2>
-    <p class="sub">The short version. The full resume is a plain, ATS-friendly document you can download below.</p>
-    <div class="cols">
-
-      <div>
-        <section aria-labelledby="h-skills">
-          <h3 id="h-skills">SKILLS</h3>
-          <span class="group-label">Programming</span>
-          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>C++</li><li>VB.NET</li><li>GDScript</li></ul>
-          <span class="group-label">Frameworks and data</span>
-          <ul class="chips"><li>Flutter</li><li>FastAPI</li><li>PostgreSQL/PostGIS</li><li>MySQL</li><li>Leaflet.js</li><li>Chart.js</li><li>Godot</li><li>Docker</li></ul>
-          <span class="group-label">Tools</span>
-          <ul class="chips"><li>Git and GitHub</li><li>VS Code</li><li>Word, Excel, PowerPoint</li><li>Canva</li></ul>
-        </section>
-        <section aria-labelledby="h-lang">
-          <h3 id="h-lang">LANGUAGES</h3>
-          <ul class="simple"><li>English (fluent)</li><li>Filipino (native)</li></ul>
-        </section>
-        <section aria-labelledby="h-int">
-          <h3 id="h-int">INTERESTS</h3>
-          <ul class="simple"><li>Software development</li><li>Tech entrepreneurship</li></ul>
-        </section>
-      </div>
-
-      <div>
-        <section aria-labelledby="h-exp">
-          <h3 id="h-exp">PROJECTS AND ROLES</h3>
-          <ul class="timeline">
-            <li><span class="dot">Oct 2026</span><strong>OBE Curriculum Management System</strong><span>Project Manager and Documentation</span></li>
-            <li><span class="dot">Sep 2026</span><strong>Sili-Tubig Clash</strong><span>Developer Support, 2nd Runner Up at DOST Region 2</span></li>
-            <li><span class="dot">2026</span><strong>SolarCORE (capstone)</strong><span>Lead Developer</span></li>
-            <li><span class="dot">School</span><strong>Barangay Health Center Management System</strong><span>Client-based course project, Bantug, Ramon, Isabela</span></li>
-            <li><span class="dot">A.Y. 24–26</span><strong>Minutes Secretary, CIT Local Council</strong><span>University of La Salette</span></li>
-          </ul>
-        </section>
-        <section aria-labelledby="h-edu">
-          <h3 id="h-edu">EDUCATION</h3>
-          <ul class="cert-list">
-            <li><strong>BS Information Technology</strong><span>University of La Salette, 2023 to present</span></li>
-            <li><strong>STEM, Senior High School</strong><span>University of La Salette, 2021 to 2023</span></li>
-          </ul>
-        </section>
-      </div>
-
-      <div>
-        <section aria-labelledby="h-cert">
-          <h3 id="h-cert">CERTIFICATIONS</h3>
-          <ul class="cert-list">
-            <li><strong>NetOps Certified Engineer (NTO-101)</strong><span>AppKademiya, 2026</span><a href="https://appkademiya.online/verify/CERT-NETOPS-CERTIFIED-ENGINEER-NTO101-20260902-64F416A28E06" target="_blank" rel="noopener">Verify certificate<span class="sr-only"> (opens in a new tab)</span></a></li>
-            <li><strong>Network Support and Security</strong><span>Cisco Networking Academy</span><a href="https://www.netacad.com/certificates/?issuanceId=d34c61c6-ace0-412f-afc3-43d438178b63" target="_blank" rel="noopener">Verify certificate<span class="sr-only"> (opens in a new tab)</span></a></li>
-          </ul>
-        </section>
-        <section aria-labelledby="h-awards">
-          <h3 id="h-awards">RECOGNITION</h3>
-          <ul class="cert-list">
-            <li><strong>2nd Runner Up, Team Category</strong><span>CODE &amp; CONQUER Cagayan Valley, DOST Region 2, Sep 2026</span></li>
-            <li><strong>Emerging Programmer</strong><span>College of Information Technology, Jun 2026</span></li>
-            <li><strong>3rd Runner Up, Team Category</strong><span>Tagisan ng Talino, Oct 2024</span></li>
-          </ul>
-          <p style="font-size:13px;color:var(--muted)">More awards and activities are in the full resume.</p>
-        </section>
-      </div>
+  <!-- PROJECTS -->
+  <section class="section wrap" id="projects" aria-labelledby="h-projects">
+    <div class="sec-head">
+      <h2 id="h-projects">Featured <span class="script">Projects</span></h2>
+      <a class="text-link" href="https://github.com/stfcrz11" target="_blank" rel="noopener">View my GitHub <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
     </div>
-    <div class="row dl">
-      <a class="btn solid" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Open full resume (PDF)<span class="sr-only"> (opens in a new tab)</span></a>
-      <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.docx" download>Download as Word (DOCX)</a>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="view" id="portfolio" aria-labelledby="h-portfolio" hidden>
-    <h2 id="h-portfolio" tabindex="-1">Portfolio</h2>
-    <p class="sub">Four projects, newest first. Select a screenshot to open the gallery.</p>
+    <p class="sub">Web systems, a GIS map, games and a desktop app. Select a screenshot to open the gallery.</p>
 
     <!--
       HOW TO ADD SCREENSHOTS TO A CARD
       1. Put the image in assets/screens/ (webp, jpg or png, about 1200px wide).
       2. In the card's <button class="thumb">, set the <img src> and add the file to data-shots,
          separated by "|" as  file::caption  pairs.
-      3. A card with no screenshots uses <div class="thumb none"> instead of the <button>.
     -->
     <div class="cards">
 
@@ -166,8 +129,10 @@
           data-shots="assets/screens/obe-dashboard.webp::Dashboard: draft, active and superseded curricula, projects, insights, tasks and recent activity.|assets/screens/obe-overview.webp::Workspace overview: curriculum health and the green, amber or red checks for each stage.|assets/screens/obe-frameworks.webp::Frameworks: PLOs tied to the PVMGO and linked to CHED CMO requirements, with coverage.|assets/screens/obe-mapping.webp::OBE mapping: courses supporting each PLO, above the course-by-PLO heat map.|assets/screens/obe-structure.webp::Structure: courses by year and semester, dragged between semesters.|assets/screens/obe-course-designer.webp::Course designer: code, title, type, prerequisites, faculty and content.|assets/screens/obe-add-course.webp::Add Course, step 2 of 3: a CLO with its action verb, Bloom's level and the PLOs it supports.|assets/screens/obe-public-preview.webp::Public preview: the curriculum's public page, with the Dean's Publish button.">
           <img src="assets/screens/obe-dashboard.webp" alt="OBE Curriculum dashboard showing curriculum projects, insights and tasks" width="1200" height="833" loading="lazy">
           <span class="more">8 screenshots</span>
+          <span class="go" aria-hidden="true">→</span>
         </button>
         <div class="body">
+          <span class="tag">Web system</span>
           <h3 id="p-obe">OBE Curriculum Management System</h3>
           <p class="meta">Client project, University of La Salette · Oct 2026 to present · Project Manager and Documentation</p>
           <p class="what">Designs outcome-based curricula: 6 user roles, a 7-step approval workflow from Program Head to Dean, CHED CMO and SDG coverage, a course-by-PLO heat map and drag-and-drop planning. A local AI assistant drafts outcomes, and a person reviews every suggestion.</p>
@@ -178,22 +143,87 @@
       <article class="card" aria-labelledby="p-solar">
         <button class="thumb" type="button" data-open="SolarCORE"
           data-sub="Lead Developer. Capstone project (team)."
-          data-shots="assets/screens/solarcore-dashboard.webp::Dashboard: every installation pinned on a satellite map, with totals by type and status.|assets/screens/solarcore-nearby.webp::Nearby search: an installation's details and the other sites within a 500 m radius, with map layer filters.|assets/screens/solarcore-analytics.webp::Analytics: installed capacity, barangays covered and installations per month and per year.">
+          data-shots="assets/screens/solarcore-dashboard.webp::Dashboard: every installation pinned on a satellite map, with totals by type and status.|assets/screens/solarcore-nearby.webp::Nearby search: an installation's details and the other sites within a 500 m radius, with map layer filters.|assets/screens/solarcore-installations.webp::All Installations: search and filter every record by type, status and date.|assets/screens/solarcore-add.webp::Add Installation: pin the site on the satellite map, then fill in the owner, type and capacity.|assets/screens/solarcore-analytics.webp::Analytics: installed capacity, barangays covered and installations per month and per year.|assets/screens/solarcore-404.webp::A custom 404 page in the SolarCORE style.">
           <img src="assets/screens/solarcore-dashboard.webp" alt="SolarCORE dashboard showing solar installations pinned on a satellite map of Northern Luzon" width="1200" height="589" loading="lazy">
-          <span class="more">3 screenshots</span>
+          <span class="more">6 screenshots</span>
+          <span class="go" aria-hidden="true">→</span>
         </button>
         <div class="body">
+          <span class="tag">GIS web app</span>
           <h3 id="p-solar">SolarCORE</h3>
           <p class="meta">Capstone project (team) · 2026 · Lead Developer</p>
           <p class="what">A GIS-based web app for a solar installation company to map, track and analyze its installation records, with an AI chatbot.</p>
           <ul class="chips"><li>PHP</li><li>PostgreSQL/PostGIS</li><li>Leaflet.js</li><li>Chart.js</li></ul>
-          <div class="links"><a class="btn sm" href="https://github.com/stfcrz11/SolarCORE_docs" target="_blank" rel="noopener">Project docs on GitHub<span class="sr-only"> (opens in a new tab)</span></a></div>
+          <div class="links"><a class="btn sm" href="https://stfcrz11.github.io/SolarCORE_docs/" target="_blank" rel="noopener">Project docs<span class="sr-only"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="p-task">
+        <button class="thumb center" type="button" data-open="Sili-Tubig: Task Avenue"
+          data-sub="Solo developer. Individual prototype for PEBSIT 004 (Mobile Application Development 2)."
+          data-shots="assets/screens/taskavenue-title.webp::Title screen: type a player name, then host, join, read How to Play or open the leaderboard.|assets/screens/taskavenue-host.webp::Host a game: the sari-sari store window shows the host's IP and up to 6 player slots.|assets/screens/taskavenue-maze.webp::The maze: a Philippine city of roads, stores and containers, with the MAPA minimap in the corner.|assets/screens/taskavenue-question.webp::A scroll opens a 4-choice question about Filipino culture, with 15 seconds to answer.|assets/screens/taskavenue-tama.webp::TAMA! The answer and a fun fact, and the team's progress toward 10 correct answers.|assets/screens/taskavenue-mali.webp::MALI! The correct answer is shown, so players still learn something.|assets/screens/taskavenue-leaderboard.webp::Top Players: points for wins, correct answers, tags and rescues, saved on each device.">
+          <img src="assets/screens/taskavenue-title.webp" alt="Sili-Tubig: Task Avenue title screen with a city skyline at sunset" width="1200" height="630" loading="lazy">
+          <span class="more">7 screenshots</span>
+          <span class="go" aria-hidden="true">→</span>
+        </button>
+        <div class="body">
+          <span class="tag">Game</span>
+          <h3 id="p-task">Sili-Tubig: Task Avenue</h3>
+          <p class="meta">Individual project · Sep 2026 · Solo developer</p>
+          <p class="what">A LAN trivia chase for 2 to 6 players in a maze that looks like a Philippine city. The Sili chases while the Tubig team picks up scrolls and answers questions on Filipino culture, and can ask a teammate for help. Includes LAN game discovery, a solo mode against a pathfinding bot and a leaderboard. Exported to Android.</p>
+          <ul class="chips"><li>Godot</li><li>GDScript</li><li>ENet</li><li>Android</li></ul>
+          <div class="links"><a class="btn sm" href="https://github.com/stfcrz11/CEREZO_SiliTubigClash_TaskAvenue" target="_blank" rel="noopener">Source on GitHub<span class="sr-only"> (opens in a new tab)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="p-sili">
+        <button class="thumb center" type="button" data-open="Sili-Tubig Clash"
+          data-sub="Developer Support. Team of five, 2nd Runner Up at DOST Region 2."
+          data-shots="assets/screens/sili-title.webp::Title screen.|assets/screens/sili-play.webp::Play panel: host or join on the local network, or play offline against Easy, Medium or Hard bots.|assets/screens/sili-role.webp::Role reveal at the start of a round.|assets/screens/sili-playing.webp::Playing as the Sili, with a Tubig in reach and the Tag prompt.|assets/screens/sili-tagging.webp::A teammate was just tagged: the team panel, the event feed and the minimap all mark it.|assets/screens/sili-canopy.webp::Two Tubig hiding under a palm canopy.">
+          <img src="assets/screens/sili-title.webp" alt="Sili-Tubig Clash pixel-art title screen on a beach" width="1200" height="694" loading="lazy">
+          <span class="more">6 screenshots</span>
+          <span class="go" aria-hidden="true">→</span>
+        </button>
+        <div class="body">
+          <span class="tag">Game · Award</span>
+          <h3 id="p-sili">Sili-Tubig Clash</h3>
+          <p class="meta">Team of five · Sep 2026 · Developer Support · 2nd Runner Up, DOST Region 2</p>
+          <p class="what">A digital version of the Filipino street game Sili-sili, Maanghang, Tubig-tubig, Malamig. Cheat-resistant LAN multiplayer with 4-digit lobby codes and a 45-second rejoin, on Windows, macOS and Android.</p>
+          <ul class="chips"><li>Godot</li><li>GDScript</li><li>ENet</li><li>Python/NumPy</li></ul>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="p-toda">
+        <button class="thumb" type="button" data-open="TODA Management System"
+          data-sub="Course project. Tricycle Operators and Drivers Association driver availability app."
+          data-shots="assets/screens/toda-public.webp::Passenger view: drivers who are available right now, with their plate number and contact number.|assets/screens/toda-login.webp::Sign-in for admins and drivers.|assets/screens/toda-driver.webp::Driver view: one tap sets Available, On Trip or Offline.|assets/screens/toda-dashboard.webp::Admin dashboard: available drivers, today's trips, total users and ongoing trips.|assets/screens/toda-trips.webp::Trip logs: a trip opens automatically when a driver goes On Trip, with CSV export.|assets/screens/toda-users.webp::User management: add admins and drivers and assign each driver a tricycle.">
+          <img src="assets/screens/toda-public.webp" alt="TODA System passenger view listing available tricycle drivers" width="1200" height="750" loading="lazy">
+          <span class="more">6 screenshots</span>
+          <span class="go" aria-hidden="true">→</span>
+        </button>
+        <div class="body">
+          <span class="tag">Web app</span>
+          <h3 id="p-toda">TODA Management System</h3>
+          <p class="meta">Course project · Aug 2026</p>
+          <p class="what">Shows passengers which tricycle drivers are available right now. Drivers set their own status, trips are logged automatically, and admins manage users, tricycles and trip history. Responsive, with a weather widget.</p>
+          <ul class="chips"><li>PHP</li><li>MySQL</li><li>JavaScript</li><li>AJAX</li></ul>
+          <div class="links">
+            <a class="btn sm" href="https://stfcrz11.github.io/TODA_Availability_WebAPP_ITE2/" target="_blank" rel="noopener">Live demo<span class="sr-only"> (opens in a new tab)</span></a>
+            <a class="btn sm" href="https://github.com/stfcrz11/TODA_Availability_WebAPP_ITE2" target="_blank" rel="noopener">Source on GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
         </div>
       </article>
 
       <article class="card" aria-labelledby="p-bhc">
-        <div class="thumb none" role="img" aria-label="No screenshots yet for the Barangay Health Center system"><b>BH</b><small>Screenshots coming soon</small></div>
+        <button class="thumb" type="button" data-open="Barangay Health Center Management System"
+          data-sub="Course project for a real client: Barangay Bantug, Ramon, Isabela."
+          data-shots="assets/screens/bhc-dashboard.webp::Dashboard: resident counts for each age group and pregnant women, above the masterlist filtered by sex, purok and age.|assets/screens/bhc-login.webp::Sign-in for the midwife and health workers.|assets/screens/bhc-add-resident.webp::Add New Resident: profile, birthdate, purok, contact number and guardian.|assets/screens/bhc-senior-record.webp::Senior citizen record: the profile plus health records with blood pressure, temperature and illness.|assets/screens/bhc-reports.webp::Reports: a printable masterlist of residents in Report Viewer.|assets/screens/bhc-system-logs.webp::System logs: every add, update and edit, filtered by date, action and user.">
+          <img src="assets/screens/bhc-dashboard.webp" alt="Bantug Health Center dashboard with resident counts and the masterlist" width="1074" height="571" loading="lazy">
+          <span class="more">6 screenshots</span>
+          <span class="go" aria-hidden="true">→</span>
+        </button>
         <div class="body">
+          <span class="tag">Desktop app</span>
           <h3 id="p-bhc">Barangay Health Center Management System</h3>
           <p class="meta">Course project for a real client · Barangay Bantug, Ramon, Isabela</p>
           <p class="what">Resident records for the health center, grouped by age band (0–59 months, 1–19, 20–59, senior citizens) plus pregnant women. Midwife and health-worker sign-in, purok-based dashboard counts, printable reports, user management and system logs.</p>
@@ -202,16 +232,101 @@
         </div>
       </article>
 
-      <article class="card" aria-labelledby="p-sili">
-        <div class="thumb none" role="img" aria-label="No screenshots yet for Sili-Tubig Clash"><b>ST</b><small>Screenshots coming soon</small></div>
-        <div class="body">
-          <h3 id="p-sili">Sili-Tubig Clash</h3>
-          <p class="meta">Team of five · Sep 2026 · Developer Support · 2nd Runner Up, DOST Region 2</p>
-          <p class="what">A digital version of the Filipino street game Sili-sili, Maanghang, Tubig-tubig, Malamig. Cheat-resistant LAN multiplayer with 4-digit lobby codes and a 45-second rejoin, on Windows, macOS and Android.</p>
-          <ul class="chips"><li>Godot</li><li>GDScript</li><li>ENet</li><li>Python/NumPy</li></ul>
-        </div>
-      </article>
+    </div>
+  </section>
 
+  <!-- RESUME -->
+  <section class="section wrap" id="resume" aria-labelledby="h-resume">
+    <div class="sec-head">
+      <h2 id="h-resume">My <span class="script">Resume</span></h2>
+      <a class="text-link" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Full resume (PDF) <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </div>
+    <p class="sub">The short version. The full resume is a plain, ATS-friendly document you can download below.</p>
+    <div class="cols">
+
+      <div class="panel">
+        <section aria-labelledby="h-skills">
+          <h3 id="h-skills">Skills</h3>
+          <span class="group-label">Programming</span>
+          <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>C++</li><li>VB.NET</li><li>GDScript</li></ul>
+          <span class="group-label">Frameworks and data</span>
+          <ul class="chips"><li>Flutter</li><li>FastAPI</li><li>PostgreSQL/PostGIS</li><li>MySQL</li><li>Leaflet.js</li><li>Chart.js</li><li>Godot</li><li>Docker</li></ul>
+          <span class="group-label">Tools</span>
+          <ul class="chips"><li>Git and GitHub</li><li>VS Code</li><li>Word, Excel, PowerPoint</li><li>Canva</li></ul>
+        </section>
+        <section aria-labelledby="h-lang">
+          <h3 id="h-lang">Languages</h3>
+          <ul class="simple"><li>English (fluent)</li><li>Filipino (native)</li></ul>
+        </section>
+        <section aria-labelledby="h-int">
+          <h3 id="h-int">Interests</h3>
+          <ul class="simple"><li>Software development</li><li>Tech entrepreneurship</li></ul>
+        </section>
+      </div>
+
+      <div class="panel">
+        <section aria-labelledby="h-exp">
+          <h3 id="h-exp">Projects and roles</h3>
+          <ul class="timeline">
+            <li><span class="dot">Oct 2026</span><strong>OBE Curriculum Management System</strong><span>Project Manager and Documentation</span></li>
+            <li><span class="dot">Sep 2026</span><strong>Sili-Tubig: Task Avenue</strong><span>Solo developer, individual game prototype</span></li>
+            <li><span class="dot">Sep 2026</span><strong>Sili-Tubig Clash</strong><span>Developer Support, 2nd Runner Up at DOST Region 2</span></li>
+            <li><span class="dot">Aug 2026</span><strong>TODA Management System</strong><span>Course project, tricycle driver availability web app</span></li>
+            <li><span class="dot">2026</span><strong>SolarCORE (capstone)</strong><span>Lead Developer</span></li>
+            <li><span class="dot">School</span><strong>Barangay Health Center Management System</strong><span>Client-based course project, Bantug, Ramon, Isabela</span></li>
+            <li><span class="dot">A.Y. 24–26</span><strong>Minutes Secretary, CIT Local Council</strong><span>University of La Salette</span></li>
+          </ul>
+        </section>
+        <section aria-labelledby="h-edu">
+          <h3 id="h-edu">Education</h3>
+          <ul class="cert-list">
+            <li><strong>BS Information Technology</strong><span>University of La Salette, 2023 to present</span></li>
+            <li><strong>STEM, Senior High School</strong><span>University of La Salette, 2021 to 2023</span></li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="panel">
+        <section aria-labelledby="h-cert">
+          <h3 id="h-cert">Certifications</h3>
+          <ul class="cert-list">
+            <li><strong>NetOps Certified Engineer (NTO-101)</strong><span>AppKademiya, 2026</span><a href="https://appkademiya.online/verify/CERT-NETOPS-CERTIFIED-ENGINEER-NTO101-20260902-64F416A28E06" target="_blank" rel="noopener">Verify certificate<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><strong>Network Support and Security</strong><span>Cisco Networking Academy</span><a href="https://www.netacad.com/certificates/?issuanceId=d34c61c6-ace0-412f-afc3-43d438178b63" target="_blank" rel="noopener">Verify certificate<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="h-awards">
+          <h3 id="h-awards">Recognition</h3>
+          <ul class="cert-list">
+            <li><strong>2nd Runner Up, Team Category</strong><span>CODE &amp; CONQUER Cagayan Valley, DOST Region 2, Sep 2026</span></li>
+            <li><strong>Emerging Programmer</strong><span>College of Information Technology, Jun 2026</span></li>
+            <li><strong>3rd Runner Up, Team Category</strong><span>Tagisan ng Talino, Oct 2024</span></li>
+          </ul>
+          <p class="note">More awards and activities are in the full resume.</p>
+        </section>
+      </div>
+    </div>
+    <div class="row dl">
+      <a class="btn dark" href="assets/Stefane-Cerezo-Resume-ATS.pdf" target="_blank" rel="noopener">Open full resume (PDF) <span aria-hidden="true">→</span><span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="btn" href="assets/Stefane-Cerezo-Resume-ATS.docx" download>Download as Word (DOCX)</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section wrap" id="contact" aria-labelledby="h-contact">
+    <div class="cta">
+      <div class="cta-text">
+        <p class="script-label">Open to OJT</p>
+        <h2 id="h-contact">Let's build something together</h2>
+        <p>I'm looking for an on-the-job training placement in software development. Send me an email or give me a call.</p>
+        <div class="row">
+          <a class="btn dark" href="mailto:stefanecerezo1127@gmail.com?subject=OJT%20inquiry">Write an email <span aria-hidden="true">→</span></a>
+          <a class="btn" href="tel:+639552540848">Call 0955 254 0848</a>
+        </div>
+      </div>
+      <div class="cta-art" aria-hidden="true">
+        <div class="disc"><img src="assets/screens/taskavenue-title.webp" alt="" width="1200" height="630" loading="lazy"></div>
+        <span class="sticker">Available<br>2026</span>
+      </div>
     </div>
   </section>
 </main>
@@ -231,8 +346,10 @@
   </div>
 </dialog>
 
-<footer class="strip">
-  <div class="in">
+<footer class="foot">
+  <div class="in wrap">
+    <a class="brand" href="#home">Stefane<span>.</span></a>
+    <span class="copy">&copy; <span id="year">2026</span> Stefane Ballad Cerezo</span>
     <div class="icons">
       <a href="https://github.com/stfcrz11" target="_blank" rel="noopener" aria-label="GitHub profile (opens in a new tab)">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -240,12 +357,9 @@
       <a href="mailto:stefanecerezo1127@gmail.com" aria-label="Send an email">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
       </a>
-    </div>
-    <span class="copy">&copy; <span id="year">2026</span> Stefane Ballad Cerezo</span>
-    <div class="icons">
-      <button type="button" id="fs" aria-label="Toggle full screen" hidden>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-      </button>
+      <a href="#home" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4-4.6-4.6V19h-2V8.8l-4.6 4.6L5 12z"/></svg>
+      </a>
     </div>
   </div>
 </footer>

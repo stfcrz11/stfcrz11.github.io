@@ -16,12 +16,12 @@ Static site (HTML, CSS, a little JavaScript). No build step.
 To update an existing site, upload the changed files again (Add file → Upload files) and commit.
 
 ## Add screenshots to a project card
-Three cards (SolarCORE, Barangay Health Center, Sili-Tubig Clash) show "Screenshots coming soon" until you add images.
+All six cards have screenshots. To add more, or to add a new project:
 1. Save screenshots in `assets/screens/` (webp, jpg or png, about 1200 px wide).
-2. In `index.html`, find the project's card. Replace its `<div class="thumb none" ...>` with the same block the OBE card uses:
+2. In `index.html`, find the project's card. Add the file to its `data-shots` list, or copy the block the OBE card uses:
    a `<button class="thumb" type="button" data-open="Project name" data-sub="One line about your role" data-shots="assets/screens/file1.png::Caption 1|assets/screens/file2.png::Caption 2">` containing an `<img src="assets/screens/file1.png" alt="Describe the screenshot" width="1200" height="833">` and `<span class="more">2 screenshots</span>`.
 3. Commit. The card now opens a gallery with arrow-key and button navigation.
 
 ## Design notes
-Layout follows the reference dark portfolio (top menu with phone number, big two-weight name, outlined buttons, three-column resume). There is no photo of you; the home view shows the OBE system's screens instead.
+A friendly, light-first layout: top menu with the phone number and a light/dark theme button, a modest two-tone name, rounded pill buttons, soft cards and a three-column resume. The theme follows the visitor's system setting until they press the theme button; their choice is remembered in the browser. There is no photo of you; the home view shows screens from OBE, SolarCORE and Task Avenue instead.
 Usability follows Shneiderman's Eight Golden Rules: consistent components, a skip link and keyboard shortcuts in the gallery, a highlighted "you are here" menu item, clear feedback on every control, closable gallery, back button works between views, no hidden gestures, and short labelled menus.
