@@ -45,13 +45,14 @@
   var next = document.getElementById("g-next");
   var shots = [];
   var idx = 0;
+  var kind = "Screenshot";
 
   function render() {
     var s = shots[idx];
     gImg.src = s.src;
     gImg.alt = s.cap;
     gCap.textContent = s.cap;
-    gCount.textContent = "Screenshot " + (idx + 1) + " of " + shots.length;
+    gCount.textContent = kind + " " + (idx + 1) + " of " + shots.length;
     prev.disabled = shots.length < 2;
     next.disabled = shots.length < 2;
   }
@@ -64,6 +65,7 @@
         return { src: parts[0], cap: parts[1] || "" };
       });
       idx = 0;
+      kind = btn.getAttribute("data-kind") || "Screenshot";
       gTitle.textContent = btn.getAttribute("data-open");
       gSub.textContent = btn.getAttribute("data-sub") || "";
       render();

@@ -172,7 +172,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .screen { position: absolute; margin: 0; border-radius: 14px; overflow: hidden; background: var(--panel); border: 6px solid var(--panel); box-shadow: var(--shadow-lg); transition: transform .35s; }
 .screen img { width: 100%; border-radius: 8px; }
-.screen.main { width: 82%; left: 2%; top: 30%; transform: rotate(-3deg); }
+.screen.main { width: 82%; left: 2%; top: 30%; transform: rotate(-3deg); z-index: 1; }
 .screen.side { width: 58%; right: -2%; top: 12%; transform: rotate(4deg); }
 .hero-art:hover .screen.main { transform: rotate(-4deg) translateY(-6px); }
 .hero-art:hover .screen.side { transform: rotate(5deg) translateY(-4px); }
@@ -261,6 +261,11 @@ img { max-width: 100%; height: auto; display: block; }
 .cert-list span { color: var(--muted); font-size: 13px; display: block; }
 .cert-list a { font-size: 13px; font-weight: 500; }
 .note { font-size: 13px; color: var(--muted); margin: 0; }
+.certs li { display: flex; gap: 12px; align-items: flex-start; }
+.certs li > div { min-width: 0; }
+.cert-thumb { flex: none; width: 92px; aspect-ratio: 3 / 2; padding: 0; border: 1px solid var(--line, rgba(0,0,0,.08)); border-radius: 10px; overflow: hidden; background: var(--bg-2); cursor: zoom-in; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; }
+.cert-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cert-thumb:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 .dl { margin-top: 28px; }
 
 /* ---------- contact banner ---------- */
